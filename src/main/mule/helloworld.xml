@@ -11,6 +11,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<flow name="helloworldFlow" doc:id="79b87316-4775-4940-9679-bc82f1732d24" >
 		<http:listener doc:name="Listener" doc:id="1ae51d91-9eec-4405-9d8d-dec0ad9b78af" config-ref="HTTP_Listener_config" path="helloworld"/>
 		<logger level="INFO" doc:name="Logger for student info" doc:id="6f11116f-40b5-4658-b89a-7540a60133ca" message="hi msg is received....................................................#[payload]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="3631f327-a66b-4fda-ac7e-9859042ded44" message="Demo logger ......"/>
 		<set-variable value="#[payload.Name]" doc:name="Set Variable for studentname" doc:id="d53a78cd-8b75-4ce9-b09b-56a4d5b7dced" variableName="studentname"/>
 		<set-variable value="#[payload]" doc:name="Set Variable for originalpayload" doc:id="ff3e1b31-577d-4fb7-8c13-730e3556bfe0" variableName="originalpayload"/>
 		<logger level="INFO" doc:name="logger to check variables" doc:id="ad25ed68-e45a-4c3b-abd9-22096ae5031f" message="studentname is #[vars.studentname] student details#[vars.originalpayload] and studentcourse is #[vars.originalpayload.course]" />
